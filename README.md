@@ -64,7 +64,7 @@ $.notifications('add', {
 
 By default, that remove the last notification that was added.
 You can pass an identifier to targetting a specific one.
-You can also pass a callback that will override the `onHide`.
+You can also pass a callback, if not the `onHide` will be used (if is set).
 
 ``` javascript
 $.notifications('remove', callback);
@@ -78,7 +78,7 @@ $.notifications('remove', 3, callback);
 #### jQuery.notifications('removeAll');
 
 Remove all notifications.
-You can pass a callback (same as `onHide`).
+You can pass a callback, if not the `onHide` will be used (if is set).
 
 ``` javascript
 $.notifications('removeAll', callback);
