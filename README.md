@@ -8,9 +8,15 @@ Notifications System inspired by Growl
 
 ### Basic
 
+First of all, include `jquery.notifications.js` and `jquery.notifications.css` in your HTML then start to use jQuery.notifications.
+
 ``` javascript
 $(document).ready(function() {
-    $.notifications({content: '<b>Lorem ipdum</b> dolor sit amet...'});
+    $.notifications({
+        text: 'Lorem ipsum',
+        content: '<b>Lorem ipdum</b> dolor sit amet...',
+        image: 'http://lorempixel.com/40/40/abstract/'
+    });
 });
 ```
 
@@ -36,7 +42,7 @@ $(document).ready(function() {
 
 ### Methods
 
-#### `add` ($.notification('add', params) is the same as $.notifications(params))
+#### jQuery.notifications('add');
 
 jQuery.notifications use a tiny template system that let you an easy way to customize your notifications.
 
@@ -50,16 +56,32 @@ $.notifications('add', {
     tpl: '<div class="{className}"><h1>{title}</h1><p>{content}</p></div>'
 });
 
+// same as $.notifications(params);
+
 ```
 
-#### `remove`
+#### jQuery.notifications('remove');
+
+By default, that remove the last notification that was added.
+You can pass an identifier to targetting a specific one.
+You can also pass a callback that will override the `onHide`.
 
 ``` javascript
-$.notifications('remove');
+$.notifications('remove', callback);
 
 // or
 
-$.notifications('remove', identifier);
+$.notifications('remove', 3, callback);
+
+```
+
+#### jQuery.notifications('removeAll');
+
+Remove all notifications.
+You can pass a callback (same as `onHide`).
+
+``` javascript
+$.notifications('removeAll', callback);
 
 ```
 
