@@ -53,8 +53,8 @@
             .animate({
                 opacity: 1
             }, defaults.fadeIn, function () {
-                var self = this, 
-                    $self = $(self), 
+                var self = this,
+                    $self = $(self),
                     iId = parseInt(self.getAttribute('data-id'), 10);
 
                 $self
@@ -148,10 +148,10 @@
     } ()); // notifications
 
     
-    $.notifications = function () {
-        if (typeof arguments[0] === 'string') {
-            return notifications[arguments[0]].apply(this, Array.prototype.slice.call(arguments, 1));
-        } else if (typeof arguments[0] === 'object' || !arguments) {
+    $.notifications = function (options) {
+        if (notifications[options]) {
+            return notifications[options].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof options === 'object' || !options) {
             return notifications.add.apply(this, arguments);
         } else {
             $.error('Method "' + arguments[0] + '" does not exist in $.notifications plugin!');
