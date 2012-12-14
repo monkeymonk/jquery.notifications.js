@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jquery.notifications.js by monkeymonk</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Jquery.notifications.js</h1>
+        <p>Notifications system inspired by Growl</p>
+
+        <p class="view"><a href="https://github.com/monkeymonk/jquery.notifications.js">View the Project on GitHub <small>monkeymonk/jquery.notifications.js</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/monkeymonk/jquery.notifications.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/monkeymonk/jquery.notifications.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/monkeymonk/jquery.notifications.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>jQuery.notifications Plugin - v 1.0</h1>
+
+<p>Notifications System inspired by Growl</p>
+
+<h2>Usage</h2>
+
+<h3>Basic</h3>
+
+<p>First of all, include <code>jquery.notifications.js</code> and <code>jquery.notifications.css</code> in your HTML then start to use jQuery.notifications.</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">notifications</span><span class="p">({</span>
+        <span class="nx">text</span><span class="o">:</span> <span class="s1">'Lorem ipsum'</span><span class="p">,</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s1">'&lt;b&gt;Lorem ipdum&lt;/b&gt; dolor sit amet...'</span><span class="p">,</span>
+        <span class="nx">image</span><span class="o">:</span> <span class="s1">'http://lorempixel.com/40/40/abstract/'</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3>Options</h3>
+
+<div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">className</span><span class="o">:</span> <span class="s1">'notification'</span><span class="p">,</span>
+
+    <span class="nx">alive</span><span class="o">:</span> <span class="mi">4000</span><span class="p">,</span>
+    <span class="nx">fadeIn</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="nx">fadeOut</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
+    <span class="nx">sticky</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+
+    <span class="c1">// Template</span>
+    <span class="nx">tpl</span><span class="o">:</span> <span class="s1">'&lt;div class="{className}"&gt;&lt;div class="{className}-img"&gt;&lt;img src="{image}" alt="" /&gt;&lt;/div&gt;&lt;div class="{className}-content"&gt;&lt;div class="{className}-title"&gt;{title}&lt;/div&gt;{content}&lt;/div&gt;&lt;/div&gt;'</span><span class="p">,</span>
+
+    <span class="c1">// Callback</span>
+    <span class="nx">onShow</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{},</span>
+    <span class="nx">onHide</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>Methods</h3>
+
+<h4>jQuery.notifications('add');</h4>
+
+<p>jQuery.notifications use a tiny template system that let you an easy way to customize your notifications.</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">notifications</span><span class="p">(</span><span class="s1">'add'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">'Lorem ipsum'</span><span class="p">,</span>
+    <span class="nx">content</span><span class="o">:</span> <span class="s1">'&lt;b&gt;Lorem ipsum&lt;/b&gt; dolor sit amet...'</span><span class="p">,</span>
+
+    <span class="nx">className</span><span class="o">:</span> <span class="s1">'simple'</span><span class="p">,</span>
+
+    <span class="nx">tpl</span><span class="o">:</span> <span class="s1">'&lt;div class="{className}"&gt;&lt;h1&gt;{title}&lt;/h1&gt;&lt;p&gt;{content}&lt;/p&gt;&lt;/div&gt;'</span>
+<span class="p">});</span>
+
+<span class="c1">// same as $.notifications(params);</span>
+
+</pre></div>
+
+<h4>jQuery.notifications('remove');</h4>
+
+<p>By default, that remove the last notification that was added.
+You can pass an identifier to targetting a specific one.
+You can also pass a callback, if not the <code>onHide</code> will be used (if is set).</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">notifications</span><span class="p">(</span><span class="s1">'remove'</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+
+<span class="c1">// or</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">notifications</span><span class="p">(</span><span class="s1">'remove'</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+
+</pre></div>
+
+<h4>jQuery.notifications('removeAll');</h4>
+
+<p>Remove all notifications.
+You can pass a callback, if not the <code>onHide</code> will be used (if is set).</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">notifications</span><span class="p">(</span><span class="s1">'removeAll'</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+
+</pre></div>
+
+<h2>Browsers: Tested and Working In</h2>
+
+<ul>
+<li>IE 6, 7, 8, 9, 10</li>
+<li>Firefox 3+</li>
+<li>Opera 10+</li>
+<li>Safari 4+</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/monkeymonk">monkeymonk</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
