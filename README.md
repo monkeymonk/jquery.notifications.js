@@ -1,7 +1,11 @@
 jQuery.notifications Plugin - v 1.0
 ==================
 
-Notifications System inspired by Growl
+Notifications System inspired by Growl.
+
+Project site: http://monkeymonk.github.com/jquery.notifications.js/
+
+Demo: http://monkeymonk.be/jquery.notifications.js/demo/
 
 
 ## Usage

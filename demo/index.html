@@ -36,6 +36,26 @@
 			<button class="btn btn-warning" type="button">Remove last notification</button>
 			<button class="btn btn-danger" type="button">Remove all notifications</button>
 		</div>
+
+		<br/><br/>
+
+		<pre>
+			$('.btn-group')
+			.on('click', '.btn-info', function () {
+				$.notifications('add', {
+					title: 'Lorem ipsum',
+					content: '<b>Lorem ipsum</b> dolor sit amet...',
+					image: 'http://lorempixel.com/40/40/abstract/',
+					sticky: true
+				});
+			})
+			.on('click', '.btn-warning', function () {
+				$.notifications('remove');
+			})
+			.on('click', '.btn-danger', function () {
+				$.notifications('removeAll');
+			});
+		</pre>
 		
 	</div>
 	
@@ -62,10 +82,6 @@
 			.on('click', '.btn-danger', function () {
 				$.notifications('removeAll');
 			});
-
-			// $.notifications('ok');
-			// $.notifications.add('ok');
-			// $.notifications('remove', {content: 'ok'});
 			
 		});
 	} (jQuery));
