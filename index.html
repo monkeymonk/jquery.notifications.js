@@ -72,7 +72,7 @@
 
 <h3>Methods</h3>
 
-<h4>jQuery.notifications('add');</h4>
+<h4>jQuery.notifications('add', options);</h4>
 
 <p>jQuery.notifications use a tiny template system that let you an easy way to customize your notifications.</p>
 
@@ -89,21 +89,21 @@
 
 </pre></div>
 
-<h4>jQuery.notifications('remove');</h4>
+<h4>jQuery.notifications('remove', onHide);</h4>
 
 <p>By default, that remove the last notification that was added.
 You can pass an identifier to targetting a specific one.
 You can also pass a callback, if not the <code>onHide</code> will be used (if is set).</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">notifications</span><span class="p">(</span><span class="s1">'remove'</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">notifications</span><span class="p">(</span><span class="s1">'remove'</span><span class="p">,</span> <span class="nx">onHide</span><span class="p">);</span>
 
 <span class="c1">// or</span>
 
-<span class="nx">$</span><span class="p">.</span><span class="nx">notifications</span><span class="p">(</span><span class="s1">'remove'</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">notifications</span><span class="p">(</span><span class="s1">'remove'</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">onHide</span><span class="p">);</span>
 
 </pre></div>
 
-<h4>jQuery.notifications('removeAll');</h4>
+<h4>jQuery.notifications('removeAll', onHide);</h4>
 
 <p>Remove all notifications.
 You can pass a callback, if not the <code>onHide</code> will be used (if is set).</p>
