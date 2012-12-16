@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 ### Methods
 
-#### jQuery.notifications('add');
+#### jQuery.notifications('add', options);
 
 jQuery.notifications use a tiny template system that let you an easy way to customize your notifications.
 
@@ -64,22 +64,22 @@ $.notifications('add', {
 
 ```
 
-#### jQuery.notifications('remove');
+#### jQuery.notifications('remove', onHide);
 
 By default, that remove the last notification that was added.
 You can pass an identifier to targetting a specific one.
 You can also pass a callback, if not the `onHide` will be used (if is set).
 
 ``` javascript
-$.notifications('remove', callback);
+$.notifications('remove', onHide);
 
 // or
 
-$.notifications('remove', 3, callback);
+$.notifications('remove', 3, onHide);
 
 ```
 
-#### jQuery.notifications('removeAll');
+#### jQuery.notifications('removeAll', onHide);
 
 Remove all notifications.
 You can pass a callback, if not the `onHide` will be used (if is set).
