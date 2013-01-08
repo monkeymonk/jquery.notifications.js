@@ -89,6 +89,13 @@ $.notifications('removeAll', callback);
 
 ```
 
+### Data-API
+Every options is accessible via [data-*].
+
+``` html
+<button type="button" data-toggle="notification" data-title="It's a notification" data-content="With <b>awesome content</b>">Toggle notification</button>
+```
+
 
 ## Browsers: Tested and Working In
 
