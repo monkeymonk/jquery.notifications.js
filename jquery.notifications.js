@@ -157,5 +157,15 @@
             $.error('Method "' + arguments[0] + '" does not exist in $.notifications plugin!');
         }
     }; // $.notifications
+
+    // Data-API
+    $(document)
+    .on('click.notification.data-api', '[data-toggle="notification"]', function (e) {
+        var $self = $(this), data = $self.data();
+
+        e.preventDefault();
+
+        $.notifications('add', data);
+    });
     
 })(jQuery); // jQuery.notifications() by Stéphan Zych (monkeymonk.be)
