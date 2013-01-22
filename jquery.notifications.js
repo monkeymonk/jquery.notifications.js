@@ -6,7 +6,7 @@
  */
 
 (function ($) {
-    "use strict";
+    'use strict';
     
     var render = function (template, data) {
         for (var k in data) {
