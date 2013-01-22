@@ -87,7 +87,7 @@
         }; // add
 
         var remove = function () {
-            var iId = $('.notification:not(.removing)').last().data('id'),
+            var iId = $('.' + defaults.className + ':not(.removing)').last().data('id'),
                 $notification, fCallback;
 
             if (arguments.length) {
@@ -130,7 +130,7 @@
                 defaults = $.extend({}, defaults, {onHide: fCallback});
             }
 
-            $('.notification')
+            $('.' + defaults.className)
             .each(function () {
                 $.notifications('remove', this.getAttribute('data-id'), {onHide: null});
             });
